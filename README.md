@@ -1,35 +1,90 @@
 # graphql-aspnetcore
 
-use master
+USE master 
 
-create database GraphqlDb
-use GraphqlDb
-CREATE TABLE Categories (
-   Id int identity(1,1),
-   Name nvarchar(max),
- PRIMARY KEY (Id),
-);
-CREATE TABLE Products (
-    Id int identity(1,1),
-    Name nvarchar(max),
-	Price money,
-    Description nvarchar(max),
- PRIMARY KEY (Id),
-    CategoryId int FOREIGN KEY REFERENCES Category(Id)
-);
+CREATE DATABASE graphqldb 
 
-use GraphqlDb
-insert category values('ayakkabı');
-insert category values('t-shirt');
-insert category values('cep telefonu')
-insert category values('gömlek')
-insert category values('pantolon')
+USE graphqldb 
 
-insert into products values('adidas spor ayakkabı',121,'güzel ayakkabı',1)
-insert into products values('adidas t-shirt',121,'güzel t-shirt',2)
-insert into products values('adidas cep telefonu',121,'cep telefonu',3)
-insert into products values('adidas gömlek',121,'güzel gömlek',4)
-insert into products values('adidas pantolon',121,'güzel ayakkabı',5)
+CREATE TABLE categories 
+  ( 
+     id   INT IDENTITY(1, 1), 
+     NAME NVARCHAR(max), 
+     PRIMARY KEY (id), 
+  ); 
+
+CREATE TABLE products 
+  ( 
+     id          INT IDENTITY(1, 1), 
+     NAME        NVARCHAR(max), 
+     price       MONEY, 
+     description NVARCHAR(max), 
+          PRIMARY KEY (id), 
+     categoryid  INT FOREIGN KEY REFERENCES category(id) 
+  ); 
+
+USE graphqldb 
+
+INSERT category 
+VALUES('ayakkabı'); 
+
+INSERT category 
+VALUES('t-shirt'); 
+
+INSERT category 
+VALUES('cep telefonu') 
+
+INSERT category 
+VALUES('gömlek') 
+
+INSERT category 
+VALUES('pantolon') 
+
+INSERT INTO products 
+VALUES     ('adidas spor ayakkabı', 
+            121, 
+            'güzel ayakkabı', 
+            1) 
+
+INSERT INTO products 
+VALUES     ('adidas t-shirt', 
+            121, 
+            'güzel t-shirt', 
+            2) 
+
+INSERT INTO products 
+VALUES     ('adidas cep telefonu', 
+            121, 
+            'cep telefonu', 
+            3) 
+
+INSERT INTO products 
+VALUES     ('adidas gömlek', 
+            121, 
+            'güzel gömlek', 
+            4) 
+
+INSERT INTO products 
+VALUES     ('adidas pantolon', 
+            121, 
+            'güzel ayakkabı', 
+            5) 
+
+query example:
+{ 
+ "query":
+  "query{
+     category(id:2)
+     {
+     	id
+     	name
+     	products{
+     		id
+     		name
+     	}
+     }
+   }"
+}
 
 
 
