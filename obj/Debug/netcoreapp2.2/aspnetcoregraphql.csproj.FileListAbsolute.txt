@@ -1,0 +1,14 @@
+C:\Users\burak.caglayan\Documents\Projects\aspnetcoregraphql\bin\Debug\netcoreapp2.2\aspnetcoregraphql.deps.json
+C:\Users\burak.caglayan\Documents\Projects\aspnetcoregraphql\bin\Debug\netcoreapp2.2\aspnetcoregraphql.runtimeconfig.json
+C:\Users\burak.caglayan\Documents\Projects\aspnetcoregraphql\bin\Debug\netcoreapp2.2\aspnetcoregraphql.runtimeconfig.dev.json
+C:\Users\burak.caglayan\Documents\Projects\aspnetcoregraphql\bin\Debug\netcoreapp2.2\aspnetcoregraphql.dll
+C:\Users\burak.caglayan\Documents\Projects\aspnetcoregraphql\bin\Debug\netcoreapp2.2\aspnetcoregraphql.pdb
+C:\Users\burak.caglayan\Documents\Projects\aspnetcoregraphql\obj\Debug\netcoreapp2.2\aspnetcoregraphql.csprojAssemblyReference.cache
+C:\Users\burak.caglayan\Documents\Projects\aspnetcoregraphql\obj\Debug\netcoreapp2.2\aspnetcoregraphql.csproj.CoreCompileInputs.cache
+C:\Users\burak.caglayan\Documents\Projects\aspnetcoregraphql\obj\Debug\netcoreapp2.2\aspnetcoregraphql.RazorAssemblyInfo.cache
+C:\Users\burak.caglayan\Documents\Projects\aspnetcoregraphql\obj\Debug\netcoreapp2.2\aspnetcoregraphql.RazorAssemblyInfo.cs
+C:\Users\burak.caglayan\Documents\Projects\aspnetcoregraphql\obj\Debug\netcoreapp2.2\aspnetcoregraphql.AssemblyInfoInputs.cache
+C:\Users\burak.caglayan\Documents\Projects\aspnetcoregraphql\obj\Debug\netcoreapp2.2\aspnetcoregraphql.AssemblyInfo.cs
+C:\Users\burak.caglayan\Documents\Projects\aspnetcoregraphql\obj\Debug\netcoreapp2.2\aspnetcoregraphql.RazorTargetAssemblyInfo.cache
+C:\Users\burak.caglayan\Documents\Projects\aspnetcoregraphql\obj\Debug\netcoreapp2.2\aspnetcoregraphql.dll
+C:\Users\burak.caglayan\Documents\Projects\aspnetcoregraphql\obj\Debug\netcoreapp2.2\aspnetcoregraphql.pdb
