@@ -6,10 +6,12 @@ using aspnetcoregraphql.Data;
 using aspnetcoregraphql.Models;
 using GraphQL;
 using GraphQL.Types;
+using GraphqlSample.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -30,15 +32,19 @@ namespace aspnetcoregraphql
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            var connection = @"Server=localhost,1433;Database=GraphqlDb;User=sa;Password=MyPassword001;";
 
-             services.AddScoped<EasyStoreQuery>();   
-    services.AddTransient<ICategoryRepository, CategoryRepository>();
-    services.AddTransient<IProductRepository, ProductRepository>();   
-    services.AddScoped<IDocumentExecuter, DocumentExecuter>();
-    services.AddTransient<CategoryType>();
-    services.AddTransient<ProductType>();
-    var sp = services.BuildServiceProvider();
-    services.AddScoped<ISchema>(_ => new EasyStoreSchema(type => (GraphType) sp.GetService(type)) {Query = sp.GetService<EasyStoreQuery>()});
+            services.AddDbContext<ApplicationDbContext>(
+                options => options.UseSqlServer(connection));
+
+            services.AddScoped<EasyStoreQuery>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddScoped<IDocumentExecuter, DocumentExecuter>();
+            services.AddTransient<CategoryType>();
+            services.AddTransient<ProductType>();
+            var sp = services.BuildServiceProvider();
+            services.AddScoped<ISchema>(_ => new EasyStoreSchema(type => (GraphType)sp.GetService(type)) { Query = sp.GetService<EasyStoreQuery>() });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GraphqlSample.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace aspnetcoregraphql.Data
 {
@@ -8,30 +10,20 @@ namespace aspnetcoregraphql.Data
     {
         private List<Category> _categories;
  
-        public CategoryRepository()
+         private ApplicationDbContext _context;
+        public CategoryRepository(ApplicationDbContext context)
         {
-            _categories = new List<Category>{
-                new Category()
-                {
-                    Id = 1,
-                    Name = "Computers"
-                },
-                new Category()
-                {
-                    Id = 2,
-                    Name = "Mobile Phones"
-                }
-            };
+            _context = context;
         }
  
         public Task<List<Category>> CategoriesAsync()
         {
-            return Task.FromResult(_categories);
+            return _context.Categories.ToListAsync();
         }
  
         public Task<Category> GetCategoryAsync(int id)
         {
-            return Task.FromResult(_categories.FirstOrDefault(x => x.Id == id));
+            return _context.Categories.FirstOrDefaultAsync(x => x.Id == id);
         }
     }
 }
