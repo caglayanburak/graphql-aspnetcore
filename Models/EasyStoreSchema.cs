@@ -8,6 +8,7 @@ namespace aspnetcoregraphql.Models
         public EasyStoreSchema(Func<Type, GraphType> resolveType)
             :base(resolveType)
         {
+            
             Query = (EasyStoreQuery)resolveType(typeof(EasyStoreQuery));
         }
     }
