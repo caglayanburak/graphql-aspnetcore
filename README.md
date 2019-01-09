@@ -1,6 +1,7 @@
 # graphql-aspnetcore
 
 use master
+
 create database GraphqlDb
 use GraphqlDb
 CREATE TABLE Categories (
