@@ -10,5 +10,7 @@ namespace GraphqlSample.Models
     }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<V1> V1s { get; set; }
+        public DbSet<V2> V2s { get; set; }
     }
 }

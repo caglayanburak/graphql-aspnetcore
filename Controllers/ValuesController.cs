@@ -15,8 +15,8 @@ namespace aspnetcoregraphql.Controllers
     {
         private readonly IDocumentExecuter _documentExecuter;
         private readonly ISchema _schema;
- 
-        public GraphQLController(IDocumentExecuter documentExecuter,ISchema schema)
+
+        public GraphQLController(IDocumentExecuter documentExecuter, ISchema schema)
         {
             _documentExecuter = documentExecuter;
             _schema = schema;
@@ -25,8 +25,8 @@ namespace aspnetcoregraphql.Controllers
         [HttpGet]
         public IActionResult Test()
         {
-    return Ok();
-}
+            return Ok();
+        }
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]GraphQLQuery query)
@@ -46,7 +46,7 @@ namespace aspnetcoregraphql.Controllers
 
                 return Ok(result);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex);
             }

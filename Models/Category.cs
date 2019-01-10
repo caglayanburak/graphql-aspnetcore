@@ -9,4 +9,11 @@ namespace aspnetcoregraphql
  
         List<Product> Products { get; set; }
     }
+
+    public class V2
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+ 
+    }
 }
